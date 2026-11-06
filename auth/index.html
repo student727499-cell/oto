@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://xsahhqwlghqfkrlqjylj.supabase.co; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title data-i18n="authTitle">Oto akkaunti</title>
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/i18n.js" defer></script>
+  <script src="../assets/auth.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="30" height="30"><span>Oto</span></a>
+    <nav class="langs" data-i18n-label="language" aria-label="Til">
+      <button type="button" data-lang="uz" lang="uz">Oʻzbekcha</button>
+      <button type="button" data-lang="ru" lang="ru">Русский</button>
+      <button type="button" data-lang="en" lang="en">English</button>
+    </nav>
+  </header>
+
+  <main class="account" aria-live="polite">
+    <div data-state="checking">
+      <h1 data-i18n="checking" tabindex="-1">Havola tekshirilmoqda…</h1>
+      <noscript><p data-i18n="noscript">Bu sahifa ishlashi uchun brauzerda JavaScript yoqilgan boʻlishi kerak.</p></noscript>
+    </div>
+
+    <div data-state="confirmed" hidden>
+      <div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h1 data-i18n="confirmedTitle" tabindex="-1">Email tasdiqlandi</h1>
+      <p data-i18n="confirmedText">Endi Oto’ga qayting. Ilova ochiq boʻlsa, oʻzi kiradi. Ochiq boʻlmasa, email va parolingiz bilan kiring.</p>
+    </div>
+
+    <div data-state="password" hidden>
+      <h1 data-i18n="passwordTitle" tabindex="-1">Yangi parol</h1>
+      <p data-i18n="passwordText">Oto akkauntingiz uchun yangi parol oʻylab toping. Boshqa joylarda ishlatmaydigan parol boʻlgani maʼqul.</p>
+      <p class="who" id="who" hidden></p>
+      <form id="password-form" novalidate>
+        <input type="email" id="username" name="username" autocomplete="username" hidden readonly>
+        <label class="field">
+          <span data-i18n="newPassword">Yangi parol</span>
+          <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" maxlength="72" required spellcheck="false">
+        </label>
+        <label class="field">
+          <span data-i18n="repeatPassword">Yana bir marta</span>
+          <input type="password" id="repeat" name="repeat" autocomplete="new-password" minlength="8" maxlength="72" required spellcheck="false">
+        </label>
+        <div class="row">
+          <span class="fine" data-i18n="rule">Kamida 8 belgi, harf va raqam bilan.</span>
+          <button type="button" class="link-button" id="reveal" data-i18n="show" aria-controls="password repeat" aria-pressed="false">Koʻrsatish</button>
+        </div>
+        <p class="error" id="error" role="alert"></p>
+        <button type="submit" class="button primary" id="save" data-i18n="save">Parolni saqlash</button>
+      </form>
+    </div>
+
+    <div data-state="saved" hidden>
+      <div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h1 data-i18n="savedTitle" tabindex="-1">Parol saqlandi</h1>
+      <p data-i18n="savedText">Endi Oto’da emailingiz va yangi parolingiz bilan kiring.</p>
+    </div>
+
+    <div data-state="emailChanged" hidden>
+      <div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h1 data-i18n="emailChangedTitle" tabindex="-1">Email oʻzgartirildi</h1>
+      <p data-i18n="emailChangedText">Oto’ga yangi email bilan kiring.</p>
+    </div>
+
+    <div data-state="expired" hidden>
+      <h1 data-i18n="expiredTitle" tabindex="-1">Havola eskirgan</h1>
+      <p data-i18n="expiredText">Bu havola ishlatib boʻlingan yoki muddati oʻtgan.</p>
+    </div>
+
+    <div data-state="error" hidden>
+      <h1 data-i18n="errorTitle" tabindex="-1">Havola ishlamadi</h1>
+      <p data-i18n="errorText">Oto’da yangi havola soʻrang va eng oxirgi kelgan xatdagi havolani oching.</p>
+    </div>
+
+    <div data-state="empty" hidden>
+      <h1 data-i18n="emptyTitle" tabindex="-1">Bu sahifa Oto xatlari uchun</h1>
+      <p data-i18n="emptyText">Oto yuborgan xatdagi havolani bosing, u sizni shu yerga olib keladi.</p>
+      <p><a href="../" data-i18n="home">Oto sayti</a></p>
+    </div>
+  </main>
+</body>
+</html>

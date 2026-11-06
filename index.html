@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <title data-i18n="title">Oto — Mac va iPhone uchun musiqa ilovasi</title>
+  <meta name="description" content="Oto — oddiy va tez musiqa ilovasi: kutubxona, qoʻshiq matni, doʻstlar bilan ulashish. Mac va iPhone uchun bepul.">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/i18n.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./"><img src="assets/icon.svg" alt="" width="30" height="30"><span>Oto</span></a>
+    <nav class="langs" data-i18n-label="language" aria-label="Til">
+      <button type="button" data-lang="uz" lang="uz">Oʻzbekcha</button>
+      <button type="button" data-lang="ru" lang="ru">Русский</button>
+      <button type="button" data-lang="en" lang="en">English</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="sr-only" data-i18n="title">Oto — Mac va iPhone uchun musiqa ilovasi</h1>
+      <div class="lyrics" aria-hidden="true">
+        <ol>
+          <li data-i18n="lyric1">Musiqangiz bitta joyda.</li>
+          <li data-i18n="lyric2">Mac va iPhone’da.</li>
+          <li data-i18n="lyric3">Soʻzlari bilan birga.</li>
+          <li data-i18n="lyric4">Doʻstlaringiz bilan.</li>
+          <li data-i18n="lyric5">Reklamasiz.</li>
+        </ol>
+      </div>
+      <p class="lead" data-i18n="lead">Oto — oddiy va tez musiqa ilovasi. Qoʻshiqlaringizni tartibda saqlaydi, yangilarini topib beradi va doʻstlaringiz bilan ulashadi. Bepul.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/student727499-cell/oto/releases/latest/download/Oto-mac.zip" data-i18n="downloadMac">Mac uchun yuklab olish</a>
+        <a class="button" href="https://github.com/student727499-cell/oto/releases/latest/download/Oto.ipa" data-i18n="downloadIphone">iPhone uchun yuklab olish</a>
+      </div>
+      <p class="fine"><span data-i18n="requirements">macOS 15 yoki yangisi. iPhone uchun iOS 18 yoki yangisi.</span> <span id="version"></span></p>
+    </section>
+
+    <section aria-labelledby="features-title">
+      <h2 id="features-title" data-i18n="featuresTitle">Nima qila oladi</h2>
+      <dl class="features">
+        <div><dt data-i18n="f1t">Kutubxona</dt><dd data-i18n="f1d">Qoʻshiqlar, albomlar, ijrochilar va pleylistlar. Fayllar oʻz kompyuteringizda turadi.</dd></div>
+        <div><dt data-i18n="f2t">Musiqa topish</dt><dd data-i18n="f2d">YouTube va Apple katalogidan qidiring, eshitib koʻring va bir bosishda saqlang.</dd></div>
+        <div><dt data-i18n="f3t">Qoʻshiq matni</dt><dd data-i18n="f3d">Soʻzlar qoʻshiq bilan birga yuradi. Qatorni bossangiz, qoʻshiq oʻsha joydan davom etadi.</dd></div>
+        <div><dt data-i18n="f4t">Doʻstlar</dt><dd data-i18n="f4d">Kim nimani eshitishini oʻzingiz tanlaysiz. Umumiy albomlar, xabarlar va layklar.</dd></div>
+        <div><dt data-i18n="f5t">Oto AI</dt><dd data-i18n="f5d">“Sokin bir narsa qoʻy” deb yozing yoki atrofda chalinayotgan qoʻshiqni tanittiring.</dd></div>
+        <div><dt data-i18n="f6t">Wi‑Fi orqali</dt><dd data-i18n="f6d">Mac va iPhone bitta Wi‑Fi’da boʻlsa, qoʻshiqlar oʻzi koʻchadi.</dd></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="install-title">
+      <h2 id="install-title" data-i18n="installTitle">Oʻrnatish</h2>
+      <div class="columns">
+        <div>
+          <h3>Mac</h3>
+          <ol class="steps">
+            <li data-i18n="mac1">Oto-mac.zip faylini yuklab oling va ustiga ikki marta bosing. Oto ilovasi paydo boʻladi.</li>
+            <li data-i18n="mac2">Oto’ni Applications papkasiga torting.</li>
+            <li data-i18n="mac3">Birinchi ochishda macOS Oto’ni tekshira olmasligini aytadi, chunki Oto App Store’dan emas. System Settings → Privacy &amp; Security boʻlimining pastida Open Anyway’ni bosing.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>iPhone</h3>
+          <ol class="steps">
+            <li><span data-i18n="ios1">Kompyuterga AltServer’ni oʻrnating va u orqali iPhone’ga AltStore’ni qoʻying. Bu bir martalik ish:</span> <a href="https://altstore.io" rel="noopener noreferrer">altstore.io</a></li>
+            <li data-i18n="ios2">Oto.ipa faylini iPhone’da yuklab oling.</li>
+            <li data-i18n="ios3">Faylni oching: Share → AltStore. AltStore uni Apple ID’ingiz bilan imzolab oʻrnatadi.</li>
+            <li data-i18n="ios4">Birinchi ochishda Settings → Privacy &amp; Security → Developer Mode’ni yoqing.</li>
+          </ol>
+          <p class="fine" data-i18n="iosNote">Bepul Apple ID bilan ilova 7 kun ishlaydi, AltStore uni oʻzi yangilab turadi.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="verify" aria-labelledby="verify-title" hidden>
+      <h2 id="verify-title" data-i18n="checksumTitle">Fayl toʻgʻriligini tekshirish</h2>
+      <p><span data-i18n="checksumText">Yuklab olingan fayl shu yerdagi bilan aynan bir xil ekanini SHA‑256 orqali tekshirish mumkin. Mac’da Terminal’da:</span> <code class="command">shasum -a 256 Oto-mac.zip</code></p>
+      <dl class="sums">
+        <dt>Oto-mac.zip</dt><dd><code id="sum-mac">—</code></dd>
+        <dt>Oto.ipa</dt><dd><code id="sum-ios">—</code></dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="security-title">
+      <h2 id="security-title" data-i18n="securityTitle">Xavfsizlik</h2>
+      <ul class="plain">
+        <li data-i18n="s1">Parolingizni hech kim koʻrmaydi: u faqat shifrlangan izi (bcrypt) koʻrinishida saqlanadi.</li>
+        <li data-i18n="s2">Har bir akkaunt email orqali tasdiqlanadi.</li>
+        <li data-i18n="s3">Musiqangizni faqat siz ruxsat bergan odamlar eshitadi. Bu qoidani serverning oʻzi tekshiradi.</li>
+        <li data-i18n="s4">Bu sayt kuzatuv, reklama va begona skriptlarsiz ishlaydi.</li>
+        <li><span data-i18n="s5">Zaiflik topsangiz, shu manzilga yozing:</span> <a href="mailto:music727399@gmail.com">music727399@gmail.com</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n="footer">Oto doʻstlar uchun qilingan.</p>
+    <p><a href="https://github.com/student727499-cell/oto" data-i18n="footerSource">Sayt kodi GitHub’da</a></p>
+  </footer>
+</body>
+</html>

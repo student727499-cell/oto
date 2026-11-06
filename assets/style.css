@@ -1,0 +1,595 @@
+/* Oto website: black and white like the app, set in the system typeface the app uses. */
+
+:root {
+  --paper: #ffffff;
+  --ink: #000000;
+  --mute: #6e6e73;
+  --line: #e3e3e6;
+  --soft: #f2f2f4;
+  --soft-hover: #e8e8eb;
+  --danger: #b42318;
+  --measure: 38rem;
+  --page: 68rem;
+  --gutter: 24px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #000000;
+    --ink: #ffffff;
+    --mute: #a1a1a6;
+    --line: #2b2b2e;
+    --soft: #1c1c1e;
+    --soft-hover: #2a2a2d;
+    --danger: #ff7b6e;
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.86em;
+}
+
+/* Headings get focus from script so screen readers announce a new step; no ring for that. */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Top bar ---------------------------------------------------------------------------------- */
+
+.top {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 22px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  border-radius: 7px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .brand img {
+    box-shadow: 0 0 0 1px var(--line);
+  }
+}
+
+.langs {
+  display: flex;
+  gap: 4px;
+}
+
+.langs button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--mute);
+  font: inherit;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.langs button:hover {
+  color: var(--ink);
+}
+
+.langs button[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--soft);
+  font-weight: 600;
+}
+
+/* Page ------------------------------------------------------------------------------------- */
+
+main,
+.foot {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+section {
+  padding: 72px 0 0;
+}
+
+h2 {
+  margin: 0 0 28px;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+.fine {
+  color: var(--mute);
+  font-size: 15px;
+}
+
+/* Hero: the lines move like synced lyrics in the app ---------------------------------------- */
+
+.hero {
+  padding-top: 40px;
+}
+
+.lyrics {
+  --line-height: 1.12em;
+  font-size: clamp(40px, 7.4vw, 92px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: var(--line-height);
+  height: calc(var(--line-height) * 3.4);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 70%, transparent 100%);
+  margin: 0 0 28px;
+  user-select: none;
+}
+
+.lyrics ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.8s cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+
+.lyrics li {
+  white-space: nowrap;
+  transition: opacity 0.8s ease, filter 0.8s ease;
+  opacity: 0.12;
+  filter: blur(3.5px);
+}
+
+.lyrics li[data-d="0"] {
+  opacity: 1;
+  filter: none;
+}
+
+.lyrics li[data-d="1"] {
+  opacity: 0.3;
+  filter: blur(1.4px);
+}
+
+.lyrics li[data-d="2"] {
+  opacity: 0.16;
+  filter: blur(2.6px);
+}
+
+.lyrics.still ol,
+.lyrics.still li {
+  transition: none;
+}
+
+.lead {
+  max-width: var(--measure);
+  font-size: 21px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 17px;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.button:hover {
+  background: var(--soft-hover);
+  text-decoration: none;
+}
+
+.button.primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.button.primary:hover {
+  opacity: 0.86;
+}
+
+.button[aria-disabled="true"],
+.button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Features --------------------------------------------------------------------------------- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px 40px;
+  margin: 0;
+}
+
+.features div {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.features dt {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.features dd {
+  margin: 0;
+  color: var(--mute);
+}
+
+/* Install: real steps, so they are numbered ------------------------------------------------ */
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 18px 44px;
+  max-width: var(--measure);
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+/* Checksums -------------------------------------------------------------------------------- */
+
+.sums {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 10px 20px;
+  margin: 18px 0 0;
+}
+
+.sums dt {
+  font-weight: 600;
+}
+
+.sums dd {
+  margin: 0;
+  color: var(--mute);
+  overflow-wrap: anywhere;
+}
+
+.command {
+  display: inline-block;
+  background: var(--soft);
+  border-radius: 8px;
+  padding: 2px 8px;
+}
+
+/* Security --------------------------------------------------------------------------------- */
+
+.plain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: var(--measure);
+}
+
+.plain li {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Footer ----------------------------------------------------------------------------------- */
+
+.foot {
+  padding-top: 72px;
+  padding-bottom: 48px;
+  color: var(--mute);
+  font-size: 15px;
+}
+
+.foot p {
+  margin: 0 0 6px;
+}
+
+/* Account page ----------------------------------------------------------------------------- */
+
+.account {
+  max-width: 30rem;
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+
+.account h1 {
+  margin: 0 0 14px;
+  font-size: clamp(32px, 6vw, 44px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.account [data-state] {
+  animation: arrive 0.35s ease both;
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.who {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.field {
+  display: block;
+  margin: 18px 0 0;
+}
+
+.field span {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.field input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.link-button {
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 600;
+  margin: 16px 0 0;
+  min-height: 1.55em;
+}
+
+.account .button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+
+.mark svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Small screens ---------------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  section {
+    padding-top: 56px;
+  }
+
+  .features {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .lead {
+    font-size: 19px;
+  }
+
+  .actions .button {
+    flex: 1 1 100%;
+  }
+
+  .lyrics {
+    font-size: clamp(30px, 9vw, 44px);
+    height: calc(var(--line-height) * 4.6);
+  }
+
+  .lyrics li {
+    white-space: normal;
+  }
+
+  .sums {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .sums dd {
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1000px) {
+  .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lyrics {
+    height: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .lyrics li,
+  .lyrics li[data-d] {
+    opacity: 1;
+    filter: none;
+    transition: none;
+  }
+
+  .lyrics li[aria-hidden="true"] {
+    display: none;
+  }
+
+  .account [data-state] {
+    animation: none;
+  }
+}
