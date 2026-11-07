@@ -375,6 +375,8 @@ p {
   background: var(--soft);
   border-radius: 8px;
   padding: 2px 8px;
+  overflow-wrap: anywhere;
+  user-select: all;
 }
 
 /* Security --------------------------------------------------------------------------------- */

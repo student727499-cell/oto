@@ -1,0 +1,39 @@
+{
+ "name": "Oto",
+ "subtitle": "Oto for iPhone",
+ "description": "Oto is a simple music app: your library, lyrics, Find Music (YouTube and the Apple Music catalogue) and friends. New versions of Oto appear here.",
+ "iconURL": "https://student727499-cell.github.io/oto/assets/oto-icon.png",
+ "website": "https://student727499-cell.github.io/oto/",
+ "tintColor": "#000000",
+ "apps": [
+  {
+   "name": "Oto",
+   "bundleIdentifier": "uz.yusufxon.oto",
+   "developerName": "Oto",
+   "subtitle": "Music, lyrics and friends",
+   "localizedDescription": "A simple, fast music app. Keep your songs in order with albums, artists and playlists, read lyrics that move with the song, find new music on YouTube and in the Apple Music catalogue, and share with friends. In 24 languages.",
+   "iconURL": "https://student727499-cell.github.io/oto/assets/oto-icon.png",
+   "tintColor": "#000000",
+   "category": "entertainment",
+   "versions": [
+    {
+     "version": "1.1",
+     "buildVersion": "2",
+     "date": "2026-11-07",
+     "localizedDescription": "YouTube works on the iPhone without a Mac: search, whole songs, and + to save them. Songs and singers can be kept with a heart without downloading. Two devices on one profile no longer take each other's songs out of the cloud.",
+     "downloadURL": "https://student727499-cell.github.io/oto/download/Oto-1.1.ipa",
+     "size": 5109741,
+     "minOSVersion": "18.0"
+    }
+   ],
+   "appPermissions": {
+    "entitlements": [],
+    "privacy": {
+     "NSLocalNetworkUsageDescription": "Oto finds your other devices on this Wi-Fi to sync music between them.",
+     "NSMicrophoneUsageDescription": "Oto listens when you ask for a song by voice or want to recognise a song playing nearby."
+    }
+   }
+  }
+ ],
+ "news": []
+}

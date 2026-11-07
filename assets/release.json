@@ -1,14 +1,14 @@
 {
- "version": "1.0",
- "date": "2026-11-06",
+ "version": "1.1",
+ "date": "2026-11-07",
  "mac": {
   "file": "download/Oto-mac.zip",
-  "size": 4566873,
-  "sha256": "65713c0283d18dde654e902c506c233333749f02960fe1aab8f761194aa02575"
+  "size": 4695344,
+  "sha256": "b41ddc6fe1a86cd7aed2524b27b33921b56a2cd84152ec456268e71d6a2c1839"
  },
  "ios": {
   "file": "download/Oto.ipa",
-  "size": 4951015,
-  "sha256": "8c7b4a695d8fe4b99a95ae8093eed10a9c7d1e01e288bb2249e8fe2e1ec3566d"
+  "size": 5109741,
+  "sha256": "0bfb3b309f2470a213d5d6e46cabde7482cca673fe2a14c67135a9914b4ae930"
  }
 }
