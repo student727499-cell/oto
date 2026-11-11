@@ -17,6 +17,15 @@
    "category": "entertainment",
    "versions": [
     {
+     "version": "1.2",
+     "buildVersion": "4",
+     "date": "2026-11-12",
+     "localizedDescription": "Search is now Find Music: songs from your library come first, then the internet. Tapping the song that is playing pauses it instead of starting it over. Change the picture of any song or album: from your photos, files, the clipboard or covers found on the internet. Shared albums take songs from the internet too, and you can let the followers you choose see the songs you heart on the internet. New songs go between your Mac and iPhone by themselves on the same Wi-Fi. A song's lyrics can be moved earlier or later.",
+     "downloadURL": "https://student727499-cell.github.io/oto/download/Oto-1.2.ipa",
+     "size": 5346196,
+     "minOSVersion": "18.0"
+    },
+    {
      "version": "1.1",
      "buildVersion": "2",
      "date": "2026-11-07",
